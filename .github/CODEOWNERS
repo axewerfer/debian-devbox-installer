@@ -1,0 +1,24 @@
+# CODEOWNERS file for debian-devbox-installer
+# This file defines who is responsible for code review in this repository
+# See: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owners - these users will be assigned as reviewers for all PRs
+* @your-username
+
+# Scripts require extra scrutiny since they run with elevated privileges
+/scripts/ @your-username
+
+# GitHub configuration files
+/.github/ @your-username
+
+# Documentation
+/docs/ @your-username
+README.md @your-username
+CONTRIBUTING.md @your-username
+
+# CI/CD workflows need careful review
+/.github/workflows/ @your-username
+
+# Security-sensitive files
+/.github/dependabot.yml @your-username
+.gitignore @your-username
