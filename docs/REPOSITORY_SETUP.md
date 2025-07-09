@@ -44,7 +44,7 @@ git commit -m "Initial commit: Complete development environment installer"
 ### 3. Push to GitHub
 
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/debian-devbox-installer.git
+git remote add origin https://github.com/axewerfer/debian-devbox-installer.git
 git branch -M main
 git push -u origin main
 ```

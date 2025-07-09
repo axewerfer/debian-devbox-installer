@@ -3,22 +3,22 @@
 # See: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
 # Global owners - these users will be assigned as reviewers for all PRs
-* @your-username
+* @axewerfer
 
 # Scripts require extra scrutiny since they run with elevated privileges
-/scripts/ @your-username
+/scripts/ @axewerfer
 
 # GitHub configuration files
-/.github/ @your-username
+/.github/ @axewerfer
 
 # Documentation
-/docs/ @your-username
-README.md @your-username
-CONTRIBUTING.md @your-username
+/docs/ @axewerfer
+README.md @axewerfer
+CONTRIBUTING.md @axewerfer
 
 # CI/CD workflows need careful review
-/.github/workflows/ @your-username
+/.github/workflows/ @axewerfer
 
 # Security-sensitive files
-/.github/dependabot.yml @your-username
-.gitignore @your-username
+/.github/dependabot.yml @axewerfer
+.gitignore @axewerfer

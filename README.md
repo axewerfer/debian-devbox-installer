@@ -1,21 +1,27 @@
 # 🚀 Debian Development Environment Installer
 
+[![Build Status](https://github.com/axewerfer/debian-devbox-installer/workflows/Test%20Installation%20Scripts/badge.svg)](https://github.com/axewerfer/debian-devbox-installer/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub issues](https://img.shields.io/github/issues/axewerfer/debian-devbox-installer)](https://github.com/axewerfer/debian-devbox-installer/issues)
+[![GitHub stars](https://img.shields.io/github/stars/axewerfer/debian-devbox-installer)](https://github.com/axewerfer/debian-devbox-installer/stargazers)
+
 A comprehensive automated installer for setting up a complete full-stack development environment on Debian/Ubuntu systems. Perfect for solo developers who need everything from basic programming tools to advanced DevOps, security, and AI integration.
 
 ## ⚡ Quick Start
 
+### Option 1: Clone Repository (Recommended)
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/debian-devbox-installer.git
+git clone https://github.com/axewerfer/debian-devbox-installer.git
 cd debian-devbox-installer
 
 # Make scripts executable
 chmod +x scripts/*.sh
 
-# Option 1: Full installation (45-60 minutes)
+# Full installation (45-60 minutes)
 ./scripts/install-devbox.sh
 
-# Option 2: Quick essentials only (15 minutes)
+# OR quick essentials only (15 minutes)
 ./scripts/quick-setup.sh
 
 # Configure credentials (after either option)
@@ -23,6 +29,21 @@ chmod +x scripts/*.sh
 
 # Fix any issues
 ./scripts/troubleshoot.sh
+```
+
+### Option 2: Direct Download & Run
+```bash
+# Quick essentials only (15 minutes)
+curl -O https://raw.githubusercontent.com/axewerfer/debian-devbox-installer/main/scripts/quick-setup.sh
+chmod +x quick-setup.sh
+./quick-setup.sh
+
+# OR full installation (download all scripts first)
+wget https://github.com/axewerfer/debian-devbox-installer/archive/refs/heads/main.zip
+unzip main.zip
+cd debian-devbox-installer-main
+chmod +x scripts/*.sh
+./scripts/install-devbox.sh
 ```
 
 ## 📋 What Gets Installed
