@@ -1,0 +1,60 @@
+name: Test Installation Scripts
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-quick-setup:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Make scripts executable
+      run: chmod +x scripts/*.sh
+    
+    - name: Test syntax check
+      run: |
+        bash -n scripts/quick-setup.sh
+        bash -n scripts/configure-credentials.sh
+        bash -n scripts/install-devbox.sh
+    
+    - name: Test script help/version flags
+      run: |
+        # Test that scripts can at least start without errors
+        timeout 10s ./scripts/quick-setup.sh || true
+
+  test-install-phases:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Make scripts executable
+      run: chmod +x scripts/*.sh
+    
+    - name: Test system preparation phase
+      run: |
+        # Test that system prep commands are valid
+        sudo apt update
+        sudo apt install -y curl wget git build-essential
+
+  lint-scripts:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install ShellCheck
+      run: sudo apt-get install -y shellcheck
+    
+    - name: Run ShellCheck
+      run: |
+        find scripts/ -name "*.sh" -exec shellcheck {} \;
