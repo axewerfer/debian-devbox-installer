@@ -39,7 +39,8 @@ echo "• Basic security tools"
 echo
 
 read -p "Continue with quick setup? (y/N): " -n 1 -r
-echoif [[ ! $REPLY =~ ^[Yy]$ ]]; then
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo "Aborted."
     exit 1
 fi

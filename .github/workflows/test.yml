@@ -22,9 +22,9 @@ jobs:
     
     - name: Test syntax check
       run: |
-        bash -n scripts/quick-setup.sh
-        bash -n scripts/configure-credentials.sh
-        bash -n scripts/install-devbox.sh
+        echo "🔍 Running comprehensive script validation..."
+        chmod +x scripts/validate-scripts.sh
+        bash scripts/validate-scripts.sh
     
     - name: Test script help/version flags
       run: |
